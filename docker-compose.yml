@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  fastapi:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - public
+      - private
+    restart: always
+
+  redis:
+    image: redis
+    networks:
+      - private
+    restart: always
+
+networks:
+  public:
+    name: public-network
+    driver: bridge
+  private:
+    name: private-network
+    driver: bridge
