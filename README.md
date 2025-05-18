@@ -87,9 +87,7 @@ params = {"game": "melon-playground", "title": "Hell"}
 response = requests.get("http://localhost:8000/api/mods", params=params)
 ```
 
-## 🛡 Особенности реализации
-
-### TLS Fingerprint Bypass
+## 🛡 TLS Fingerprint Bypass
 Я использую [curl_cffi](https://github.com/lexiforest/curl_cffi) для обхода защиты сайта
 
 ## 🤝 Участие в разработке
